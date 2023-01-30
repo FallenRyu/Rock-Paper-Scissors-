@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Number guessing game</title>
+
+  
+  </head>
+
+  <body>
+
+
+  <script>
+   
+   let win = " You won this round"
+   let lose = "  You lost this round"
+   let draw = "  You drew this round"
+   let GameScore = 0;
+   let playerScore = 0;
+
+
+   
+
+function getComputerChoice(){
+
+  const months = ["rock","Paper", "Scissor"];
+
+ random =months[Math.floor(Math.random() * months.length) ] ;
+return random.toLowerCase()
+
+//console.log( months[random]);
+
+}
+
+function getPlayerCHoice(Question){
+
+Question = prompt("Rock, Paper or Scissors")
+
+
+ return Question.toLowerCase();
+}
+
+
+
+function playRound( playerSelection, computerSelection) {
+  playerSelection = getPlayerCHoice();
+  computerSelection = getComputerChoice();
+console.log(computerSelection)
+console.log(playerSelection)
+
+
+  if (playerSelection == "rock" && computerSelection == "scissor"){
+ 
+ alert( playerSelection + " beats " + computerSelection +  win)
+ return playerScore++
+ }
+ 
+ else if(playerSelection == "scissor" && computerSelection  == "paper"){
+alert( playerSelection + " beats " + computerSelection + win)
+return playerScore++
+}
+
+
+
+else if (playerSelection == "paper" && computerSelection == "rock")
+{
+console.log(playerSelection + " beats " + computerSelection + win)
+return  playerScore++
+}
+
+else if (playerSelection == "scissor"  && computerSelection == "rock")
+{
+ alert(playerSelection + " lose " + computerSelection + lose)
+ return  GameScore++
+}
+
+
+else if (playerSelection == "papper" && computerSelection  ==  "scissor" )
+ 
+{
+ 
+ alert(playerSelection + " beats " + computerSelection + lose)
+ return    GameScore++
+}
+
+else if (playerSelection == "rock"  && computerSelection  == "paper")
+{
+ 
+ alert( playerSelection + " beats " + computerSelection +lose)
+ return   GameScore++
+}
+
+
+
+else {alert(draw)}
+
+
+} 
+
+
+function Game(Play){
+
+playerScore = 0
+
+
+  for (let i= 0; i < 5; i++) {
+  playRound()
+
+}
+
+
+if(playerScore > GameScore){
+  alert("You won the game")
+}
+else if (playerScore == GameScore){
+  alert("It was a draw")
+}
+else{
+  alert("You lost this game")
+}
+
+
+
+
+}
+
+
+Game()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</html>
+
